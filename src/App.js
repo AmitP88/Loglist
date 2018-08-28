@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Loglist from './Loglist';
+
 class App extends Component {
   render() {
     return (
-      <div className="App"></div>
+      <div className="App">
+        <Loglist />
+      </div>
     );
   }
 }
