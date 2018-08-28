@@ -23,7 +23,7 @@ export default class Loglist extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Loglist">
                 <p>This is the Loglist component</p>
             </div> 
         )
