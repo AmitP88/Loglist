@@ -18,8 +18,8 @@ export default class Loglist extends Component {
                 let list = [];
                 for(let i = 0; i < data.mockData.length; i++){
                     list.push(
-                        <div className="container">
-                            <ReactJson theme={"hopscotch"} key={i} src={data.mockData[i]} />                        
+                        <div className="log">
+                            <ReactJson theme={"hopscotch"}   key={i} src={data.mockData[i]} />                        
                         </div>
 
                     );

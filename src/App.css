@@ -1,3 +1,17 @@
 .App {
   text-align: center;
 }
+
+.log {
+  width: 60%;
+  height: 150px;
+  background-color: rgb(92, 84, 91);
+  padding: 5%;
+  padding-top: 0.5%;
+  margin: 0 auto;
+}
+
+.Loglist {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
