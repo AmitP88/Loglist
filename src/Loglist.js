@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactJson from 'react-json-view';
 
 export default class Loglist extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ export default class Loglist extends Component {
     render() {
         return (
             <div className="Loglist">
-                <p>This is the Loglist component</p>
+            <ReactJson src={this.state.Logs} />
             </div> 
         )
     }
