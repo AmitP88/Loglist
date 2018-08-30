@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactJson from 'react-json-view';
+import TimeAgo from 'react-timeago'
 
 export default class Loglist extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ export default class Loglist extends Component {
                 for(let i = 0; i < data.mockData.length; i++){
                     list.push(
                         <div className="log" key={i}>
+                            <TimeAgo date={Date()} />
                             <ReactJson theme={"hopscotch"} key={i} src={data.mockData[i]} />                        
                         </div>
                     );
