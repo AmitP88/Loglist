@@ -1,11 +1,11 @@
 html {
-  background-color:black;
+  background-color: rgb(92, 84, 91);
 }
 
 .log {
   width: 50%;
   height: auto;
-  background-color: darkgreen;
+  background-color: rgb(92, 84, 91);
   padding: 0.5% 5% 0.5% 5%;
   margin: 0 auto;
 }
