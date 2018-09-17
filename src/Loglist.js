@@ -19,7 +19,7 @@ export default class Loglist extends Component {
                     list.push(
                         <div className="log" key={i}>
                             <TimeAgo date={Date()} />
-                            <ReactJson theme={"hopscotch"} key={i} src={data.mockData[i]} />                        
+                            <ReactJson theme={"greenscreen"} key={i} src={data.mockData[i]} />                        
                         </div>
                     );
                 }
