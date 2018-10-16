@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactJson from 'react-json-view';
-import TimeAgo from 'react-timeago'
+import TimeAgo from 'react-timeago';
 
 export default class Loglist extends Component {
     constructor(props) {
@@ -25,6 +25,8 @@ export default class Loglist extends Component {
                 }
                 this.setState({Logs: list});
             });
+       
+
 
     }
 

@@ -2,6 +2,8 @@ html {
   background-color: rgb(92, 84, 91);
 }
 
+/* Loglist */
+
 .log {
   width: 50%;
   height: auto;
@@ -13,4 +15,32 @@ html {
 .Loglist {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+/* Form */
+.form-container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.question {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+label {
+  padding-right: 10px;
+}
+
+.submit-button {
+  width: 100px;
+  margin-left: 20%;
+}
+
+.submitted-log {
+  background-color: cadetblue;
+  color: black;
+  width: 400px;
+  height: 200px;
+  margin-top: 25px;
 }
