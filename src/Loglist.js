@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import ReactJson from 'react-json-view';
 import TimeAgo from 'react-timeago';
+import socket, { subscribe } from './socket'
 
 export default class Loglist extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            Logs: []
-        }
+    state = {
+        logs: []
+    }
+
+    componentWillMount() {
+        // TODO: Get previously stored logs.
+        subscribe('amit-patel', 'my-collection', (message) => {
+            
+        })
+
     }
 
     componentWillMount() {
@@ -25,9 +31,6 @@ export default class Loglist extends Component {
                 }
                 this.setState({Logs: list});
             });
-       
-
-
     }
 
     render() {

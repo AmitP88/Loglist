@@ -12,9 +12,7 @@ export default class Form extends Component {
             type: '',
             uid: '',
             submitted: {
-                data: {
-                    dangerous: true,
-                }
+                data: {}
             }
         }
 
@@ -54,15 +52,49 @@ export default class Form extends Component {
 
             const socket = new WebSocket('wss://rtjson-vysaahrznr.now.sh');
 
+            const storage = {
+                uid: '',
+            };
+
             // Connection opened
-            socket.addEventListener('open', function (event) {
-                socket.send('Hello Server!');
+            const sendMessage = (message) => {
+                if (typeof message === 'string') {
+                  return socket.send(message);
+                }
+              
+                return socket.send(JSON.stringify(message));
+              }
+
+            // What to do when the socket connection is made.
+
+            socket.onopen(() => {
+                console.log('Opened connection. Sending "something".');
             });
 
-            // Listen for messages
-            socket.addEventListener('message', function (event) {
-                console.log('Message from server ', event.data);
-            });
+            // What to do when your app receives a message from the socket server.
+
+            socket.on('message', (data) => {
+                console.log('Got a message from the socket server.');
+                const message = JSON.parse(data);
+            
+                if (message.messageType === 'uid') {
+                    console.log(`Connected with uid ${message.uid}`);
+                    storage.uid = message.uid;
+            
+                    return sendMessage({
+                        uid: storage.uid,
+                        subscribeTo: {
+                        user: 'amit-patel',
+                        name: 'my-collection',
+                        },
+                    });
+                }
+            
+                if (message.messageType === 'update') {
+                    console.log(`Update for ${message.user} / ${message.name}`);
+                    console.log(message);
+                }
+            })
 
 
 

@@ -1,3 +1,5 @@
+// We need to import this file early so we can get the connection
+import './socket'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
